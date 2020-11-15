@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Form from './Form'
 import List from  './List'
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 
-export default class App extends Component {
+export class App extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -38,7 +39,10 @@ export default class App extends Component {
         <Form handleAdd={this.handleAdd}/>
         <div className="siimple-rule"></div>
         <List plantss={this.state.plants} handleRemove={this.handleRemove}/>
+        <AmplifySignOut />
       </div>
     )
   }
 }
+
+export { withAuthenticator }
