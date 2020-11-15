@@ -1,7 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App';
+import { App } from './components/App';
 import reportWebVitals from './reportWebVitals';
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 
 render(
   <React.StrictMode>
