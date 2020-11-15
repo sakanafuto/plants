@@ -39,10 +39,10 @@ export class App extends Component {
         <Form handleAdd={this.handleAdd}/>
         <div className="siimple-rule"></div>
         <List plantss={this.state.plants} handleRemove={this.handleRemove}/>
-        <AmplifySignOut />
+        {/* <AmplifySignOut /> */}
       </div>
     )
   }
 }
 
-export { withAuthenticator }
+// export { withAuthenticator }
