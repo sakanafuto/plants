@@ -22,7 +22,6 @@
     "aws-amplify-react": "^4.2.12",
     "react": "16.14.0",
     "react-dom": "^16.7.0",
-    "react-native": ">=0.59",
     "react-peer": "^0.2.6",
     "react-scripts": "4.0.0",
     "typescript": "^2.8,0",
