@@ -13,7 +13,19 @@
     "react-dom": "^16.7.0",
     "react-peer": "^0.2.6",
     "react-scripts": "4.0.0",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "react-native": "^0.56",
+    "@testing-library/dom": "^7.21.4",
+    "@react-native-community/netinfo": "^5.5.0",
+    "@aws-amplify/analytics": "3.x.x",
+    "@aws-amplify/api": "3.x.x",
+    "@aws-amplify/auth": "3.x.x",
+    "@aws-amplify/core": "3.x.x",
+    "@aws-amplify/interactions": "3.x.x",
+    "@aws-amplify/storage": "3.x.x",
+    "@aws-amplify/ui": "2.x.x",
+    "@aws-amplify/xr": "2.x.x",
+    "typescript": "^2.8,0"
   },
   "scripts": {
     "start": "react-scripts start",
