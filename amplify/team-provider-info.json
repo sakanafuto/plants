@@ -16,5 +16,23 @@
         "plants25d7c551": {}
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-plants-prod-103858-authRole",
+      "UnauthRoleArn": "arn:aws:iam::620543927344:role/amplify-plants-prod-103858-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::620543927344:role/amplify-plants-prod-103858-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-plants-prod-103858-deployment",
+      "UnauthRoleName": "amplify-plants-prod-103858-unauthRole",
+      "StackName": "amplify-plants-prod-103858",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:620543927344:stack/amplify-plants-prod-103858/d4acaed0-293e-11eb-afb1-0a683702510a",
+      "AmplifyAppId": "d2wyx7i4rxcbb9"
+    },
+    "categories": {
+      "auth": {
+        "plants25d7c551": {}
+      }
+    }
   }
 }
