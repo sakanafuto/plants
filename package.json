@@ -51,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.jsx",
+  "repository": "git@github.com:sakanafuto/plants.git",
+  "author": "togawa <61341108+sakanafuto@users.noreply.github.com>",
+  "license": "MIT"
 }
