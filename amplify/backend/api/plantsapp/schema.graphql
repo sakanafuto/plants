@@ -1,0 +1,5 @@
+type Plants @model {
+  id: ID!
+  name: String!
+  caption: String
+}
