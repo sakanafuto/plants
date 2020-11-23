@@ -1,7 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component, useState, useEffect } from 'react'
+import { API } from 'aws-amplify'
+import { listNotes } from './graphql/queries'
+import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations'
 import Form from './Form'
 import List from './List'
 import Auth from './Auth'
+
+const initialFormState = { name: '', caption: '' }
 
 export class App extends Component {
   constructor(props){
@@ -12,6 +17,32 @@ export class App extends Component {
     this.handleAdd = this.handleAdd.bind(this)
     this.handleRemove = this.handleRemove.bind(this)
   }
+
+  App() {
+    const [notes, setNotes] = useState([]);
+    const [formData, setFormData] = useState(initialFormState);
+  
+    useEffect(() => {
+      fetchNotes();
+    }, [])
+
+    async function fetchNotes() {
+      const apiData = await API.graphql({ query: listNotes });
+      setNotes(apiData.data.listNotes.items);
+    }
+  
+    async function createNote() {
+      if (!formData.name || !formData.description) return;
+      await API.graphql({ query: createNoteMutation, variables: { input: formData } });
+      setNotes([ ...notes, formData ]);
+      setFormData(initialFormState);
+    }
+  
+    async function deleteNote({ id }) {
+      const newNotesArray = notes.filter(note => note.id !== id);
+      setNotes(newNotesArray);
+      await API.graphql({ query: deleteNoteMutation, variables: { input: { id } }});
+    }
 
   // データ保存
   handleAdd(e){
