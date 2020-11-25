@@ -69,6 +69,28 @@ export class App extends Component {
         <Form handleAdd={this.handleAdd}/>
         <div className="siimple-rule"></div>
         <List plantss={this.state.plants} handleRemove={this.handleRemove}/>
+        <input
+        onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+        placeholder="Note name"
+        value={formData.name}
+      />
+      <input
+        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+        placeholder="Note description"
+        value={formData.description}
+      />
+      <button onClick={createNote}>Create Note</button>
+      <div style={{marginBottom: 30}}>
+        {
+          notes.map(note => (
+            <div key={note.id || note.name}>
+              <h2>{note.name}</h2>
+              <p>{note.description}</p>
+              <button onClick={() => deleteNote(note)}>Delete note</button>
+            </div>
+          ))
+        }
+      </div>
         <Auth />
       </div>
     )
